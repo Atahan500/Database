@@ -76,7 +76,7 @@ async def on_interaction(interaction):
         custom_id = interaction.data['custom_id']
         user_id = interaction.user.id
 
-        if manager.get_rating(custom_id) < 3:
+        if manager.get_winners_count(custom_id) < 3:
             res = manager.add_winner(user_id, custom_id)
             if res:
                 img = manager.get_prize_img(custom_id)
